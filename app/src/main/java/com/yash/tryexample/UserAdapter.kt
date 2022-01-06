@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class UserAdapter(val context: Context, val results: List<Results>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
@@ -20,6 +22,9 @@ class UserAdapter(val context: Context, val results: List<Results>): RecyclerVie
         holder.displayName.text = result.displayName
         holder.fileName.text = result.fileName
 
+        Glide.with(context).load(result.s3TempPath).into(holder.apiImage)
+
+
     }
 
     override fun getItemCount(): Int {
@@ -30,6 +35,7 @@ class UserAdapter(val context: Context, val results: List<Results>): RecyclerVie
 
         var displayName = itemView.findViewById<TextView>(R.id.displayName)
         var fileName = itemView.findViewById<TextView>(R.id.fileName)
+        var apiImage = itemView.findViewById<ImageView>(R.id.apiImage)
 
     }
 
