@@ -20,7 +20,7 @@ class UserAdapter(val context: Context, val results: List<Results>): RecyclerVie
 
         val result = results[position]
         holder.displayName.text = result.displayName
-        holder.fileName.text = result.fileName
+        holder.dateCreated.text = result.createdAtString
 
         Glide.with(context).load(result.s3TempPath).into(holder.apiImage)
 
@@ -34,7 +34,7 @@ class UserAdapter(val context: Context, val results: List<Results>): RecyclerVie
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         var displayName = itemView.findViewById<TextView>(R.id.displayName)
-        var fileName = itemView.findViewById<TextView>(R.id.fileName)
+        var dateCreated = itemView.findViewById<TextView>(R.id.dateCreated)
         var apiImage = itemView.findViewById<ImageView>(R.id.apiImage)
 
     }
