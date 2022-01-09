@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,7 +19,8 @@
             android:id="@+id/apiImage"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/displayName"
@@ -28,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:maxLines="2"
-            android:text="Display Name" />
+            android:text="@string/display_name" />
 
         <TextView
             android:id="@+id/dateCreated"
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:maxLines="2"
-            android:text="fileName" />
+            android:text="@string/filename" />
 
     </LinearLayout>
 

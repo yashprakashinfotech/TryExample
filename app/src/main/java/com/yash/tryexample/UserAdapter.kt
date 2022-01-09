@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class UserAdapter(val context: Context, val results: List<Results>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(private val context: Context, private val results: List<Results>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_view,parent,false)
@@ -33,9 +33,9 @@ class UserAdapter(val context: Context, val results: List<Results>): RecyclerVie
 
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        var displayName = itemView.findViewById<TextView>(R.id.displayName)
-        var dateCreated = itemView.findViewById<TextView>(R.id.dateCreated)
-        var apiImage = itemView.findViewById<ImageView>(R.id.apiImage)
+        var displayName: TextView = itemView.findViewById(R.id.displayName)
+        var dateCreated: TextView = itemView.findViewById(R.id.dateCreated)
+        var apiImage: ImageView = itemView.findViewById(R.id.apiImage)
 
     }
 

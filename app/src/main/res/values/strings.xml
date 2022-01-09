@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TryExample</string>
+    <string name="display_name">Display Name</string>
+    <string name="filename">fileName</string>
 </resources>
